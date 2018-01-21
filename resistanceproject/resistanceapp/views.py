@@ -46,7 +46,7 @@ class SoldierDeleteView(generic.DeleteView):
     success_url = reverse_lazy('dashboard')
 
 class SoldierDeadOnTheField(View):
-    def post(self, request):
+    def post(self, request, pk):
         print("SOLDIER DEAD ON THE FIELD RIP")
         s = Soldier.objects.get(pk=request.POST.get("soldier_id"))
         s.alive = False
